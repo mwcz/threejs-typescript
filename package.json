@@ -1,0 +1,23 @@
+{
+  "name": "threejs-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "watch": "gulp watch",
+    "postinstall": "typings install"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.17.0",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0",
+    "watch": "^1.0.0"
+  }
+}

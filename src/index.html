@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Phaser + TypeScript example project</title>
+        <style type="text/css" media="screen">
+            html, body { margin: 0; padding: 0 }
+        </style>
+    </head>
+    <body>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
+        <script>
+            require.config({
+                baseUrl: '.',
+                paths: {
+                    lodash: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js',
+                    three: '//cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js',
+                },
+                shim: {
+                    // phaser: { exports: 'Phaser' },
+                },
+            });
+            require(['app']);
+        </script>
+    </body>
+</html>
