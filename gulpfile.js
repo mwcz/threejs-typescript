@@ -7,6 +7,7 @@ const OUT_DIR = 'build';
 
 const ALL_FILES = [`${SRC_DIR}/**/*`];
 const TS_FILES = [`${SRC_DIR}/**/*.ts`];
+const OUT_FILES = [`${OUT_DIR}/**/*`];
 const OTHER_FILES = [`${SRC_DIR}/**/*`, `!${TS_FILES[0]}`];
 
 function copyTask() {
@@ -20,7 +21,8 @@ function watchTask() {
         }
     });
 
-    gulp.watch(TS_FILES, ['copy', 'reload-after-ts']);
+    // gulp.watch(TS_FILES, ['copy', 'reload-after-ts']);
+    gulp.watch(OUT_FILES, ['reload']);
     gulp.watch(OTHER_FILES, ['reload-after-copy']);
 }
 
@@ -33,5 +35,7 @@ gulp.task('ts', shell.task(['tsc']));
 gulp.task('copy', copyTask);
 gulp.task('default', ['ts', 'copy']);
 gulp.task('watch', ['ts', 'copy'], watchTask);
+gulp.task('reload', browserSyncReloadTask);
 gulp.task('reload-after-ts', ['ts'], browserSyncReloadTask);
 gulp.task('reload-after-copy', ['copy'], browserSyncReloadTask);
+
